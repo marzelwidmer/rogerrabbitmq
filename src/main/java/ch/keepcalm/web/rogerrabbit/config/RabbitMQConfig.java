@@ -15,7 +15,7 @@ import org.springframework.context.annotation.Configuration;
  * Created by marcelwidmer on 21/03/16.
  */
 @Configuration
-public class MqBeanConfiguration {
+public class RabbitMQConfig {
 
     final static String queueName = "roger-rabbitmq";
 
