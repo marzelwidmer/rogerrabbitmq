@@ -1,0 +1,67 @@
+rogerrabbitmq
+==============
+
+:toc:
+:toc-placement: preamble
+:toclevels: 1
+:project-artifact-name: rogerrabbitmq
+
+// Need some preamble to get TOC:
+{empty}
+image:https://img.shields.io/travis/marzelwidmer/rogerrabbitmq.svg?style=flat-square["TravisCI", link="https://travis-ci.org/marzelwidmer/rogerrabbitmq"]
+image:https://api.codacy.com/project/badge/Grade/34093789c75a4b72891743de8715cc65["Codacy code quality", link="https://www.codacy.com/app/marzelwidmer/rogerrabbitmq?utm_source=github.com&utm_medium=referral&utm_content=marzelwidmer/rogerrabbitmq&utm_campaign=Badge_Grade"]
+image:https://api.codacy.com/project/badge/Coverage/34093789c75a4b72891743de8715cc65["Codacy code quality", link="https://www.codacy.com/app/marzelwidmer/rogerrabbitmq?utm_source=github.com&utm_medium=referral&utm_content=marzelwidmer/rogerrabbitmq&utm_campaign=Badge_Coverage"]
+
+
+[installation]
+== Installation
+
+:spring-boot-ref-guide: http://docs.spring.io/spring-boot/docs/current-SNAPSHOT/reference/htmlsingle/
+:spring-boot-ref-guide-executable-jar: http://docs.spring.io/spring-boot/docs/current-SNAPSHOT/reference/htmlsingle/#getting-started-first-application-executable-jar
+
+=== Install RabbitMQ
+See: https://www.rabbitmq.com/install-homebrew.html
+
+    $ sudo brew install rabbitmq
+
+==== Add RabbidMQ to System PATH
+    $ sudo vi ~/.zshrc
+
+    #RABBITMQ
+    export RABBITMQ_HOME=/usr/local/Cellar/rabbitmq/3.6.4
+    export PATH=$PATH:$RABBITMQ_HOME/sbin
+
+=== Build Application:
+ $ mvn package
+
+Copy the file {project-artifact-name}.jar anywhere on the server.
+The JAR already contains the configuration for all available environments.
+For further information please visit the  {spring-boot-ref-guide}[Spring Boot Reference Guide]
+
+==== Start Application
+===== Consumer Profile
+Start application on command line. The _default_ profile supports a H2 datbase.
+For more information please visit the {spring-boot-ref-guide-executable-jar}[Spring Boot Reference Guide] for further information.
+
+    $ java -jar -Dspring.profiles.active=consumer rogerrabbitmq.jar
+
+===== Producer Profile
+Start application on command line. The _default_ profile supports a H2 datbase.
+For more information please visit the {spring-boot-ref-guide-executable-jar}[Spring Boot Reference Guide] for further information.
+
+    $ java -jar -Dspring.profiles.active=producer rogerrabbitmq.jar
+
+===== RabbitMQ Server
+    $ sudo rabbitmq-server
+
+Default URL : http://localhost:15672/#/
+
+
+==== Stop RabbitMQ Server
+    $  sudo rabbitmqctl stop
+
+
+
+
+
+
