@@ -1,0 +1,41 @@
+# Spring
+spring:
+  profiles:
+  #  active: local
+  application:
+    name: rogger-rabbitmq
+
+# Infos Build
+info:
+  build:
+    artifact: @project.artifactId@
+    name: @project.name@
+    description: @project.description@
+    version: @project.version@
+
+# Management
+management:
+  address: ${server.address}
+  port: ${server.port}
+  context-path: /manage
+  info:
+     git:
+       mode: full
+
+# Endpoints
+endpoints:
+  shutdown:
+    enabled: true
+  health:
+    enabled: true
+    sensitive: false
+
+# Server
+server:
+  address: localhost
+  port: 9060
+  tomcat:
+    compression: on
+    compressableMimeTypes: application/json,application/xml,text/html,text/xml,text/plain
+  compression:
+    enabled: true
