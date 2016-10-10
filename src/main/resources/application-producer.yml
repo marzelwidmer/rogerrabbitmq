@@ -1,4 +1,3 @@
 # Server
 server:
-  address: localhost
   port: 9062
