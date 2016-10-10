@@ -58,10 +58,12 @@ Default URL : http://localhost:15672/#/
 
 
 ==== Stop RabbitMQ Server
-    $  sudo rabbitmqctl stop
+    $  sudo rabbitmqctl stop_app
 
 
+==== Reset RabbitMQ Server
+    $  sudo rabbitmqctl force_reset
 
 
-
-
+==== Start RabbitMQ Server
+    $  sudo rabbitmqctl start_app

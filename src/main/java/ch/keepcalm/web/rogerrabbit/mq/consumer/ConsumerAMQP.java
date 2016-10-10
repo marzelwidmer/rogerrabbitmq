@@ -18,7 +18,7 @@ public class ConsumerAMQP {
 
     @Bean
     public org.springframework.amqp.core.Queue demoQueue() {
-        return new Queue("ConsumerAMQP-QUEUE");
+        return new Queue("myQueue");
     }
 
     public static void main(String[] args) {

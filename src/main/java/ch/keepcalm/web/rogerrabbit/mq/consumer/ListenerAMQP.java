@@ -13,9 +13,9 @@ public class ListenerAMQP {
     private static final Logger logger = LoggerFactory.getLogger(ListenerAMQP.class);
 
 
-    @RabbitListener(queues = "ConsumerAMQP-QUEUE")
+    @RabbitListener(queues = "myQueue")
     public void onMessage(String data) {
-        logger.info("ConsumerAMQP-QUEUE-ListenerConsumerAMQP : " + data);
+        logger.info(data);
     }
 }
 
