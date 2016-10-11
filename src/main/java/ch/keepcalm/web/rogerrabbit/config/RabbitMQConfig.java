@@ -1,6 +1,6 @@
 package ch.keepcalm.web.rogerrabbit.config;
 
-import ch.keepcalm.web.rogerrabbit.mq.Receiver;
+import ch.keepcalm.web.rogerrabbit.mq.consumer.ReceiverAMQP;
 import org.springframework.amqp.core.Binding;
 import org.springframework.amqp.core.BindingBuilder;
 import org.springframework.amqp.core.Queue;
@@ -17,7 +17,7 @@ import org.springframework.context.annotation.Configuration;
 @Configuration
 public class RabbitMQConfig {
 
-    final static String queueName = "roger-rabbitmq";
+    final static String queueName = "roger-rabbit-queue";
 
     @Bean
     Queue queue() {
@@ -45,12 +45,12 @@ public class RabbitMQConfig {
     }
 
     @Bean
-    Receiver receiver() {
-        return new Receiver();
+    ReceiverAMQP receiver() {
+        return new ReceiverAMQP();
     }
 
     @Bean
-    MessageListenerAdapter listenerAdapter(Receiver receiver) {
+    MessageListenerAdapter listenerAdapter(ReceiverAMQP receiver) {
         return new MessageListenerAdapter(receiver, "receiveMessage");
     }
 

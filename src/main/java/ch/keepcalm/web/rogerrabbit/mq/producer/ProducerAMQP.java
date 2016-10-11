@@ -6,7 +6,6 @@ import org.springframework.amqp.rabbit.core.RabbitTemplate;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
-import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.Configuration;
 
 import java.util.concurrent.Executors;
@@ -17,7 +16,6 @@ import java.util.concurrent.TimeUnit;
  * Created by marcelwidmer on 09.10.16.
  */
 @Configuration
-@SpringBootApplication
 public class ProducerAMQP implements CommandLineRunner {
     private static final Logger logger = LoggerFactory.getLogger(ProducerAMQP.class);
 
@@ -32,7 +30,7 @@ public class ProducerAMQP implements CommandLineRunner {
             public void run() {
                 logger.info("Sending an event...");
 
-                rabbitTemplate.convertAndSend("demo", "Hello World");
+                rabbitTemplate.convertAndSend("roger-rabbit-queue", "Hello World");
             }
         };
         scheduledExecutorService.scheduleAtFixedRate(task, 0, 2, TimeUnit.SECONDS);
