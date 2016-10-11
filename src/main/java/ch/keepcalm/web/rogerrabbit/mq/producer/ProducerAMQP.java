@@ -5,7 +5,6 @@ import org.slf4j.LoggerFactory;
 import org.springframework.amqp.rabbit.core.RabbitTemplate;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
-import org.springframework.boot.SpringApplication;
 import org.springframework.context.annotation.Configuration;
 
 import java.util.concurrent.Executors;
@@ -34,9 +33,5 @@ public class ProducerAMQP implements CommandLineRunner {
             }
         };
         scheduledExecutorService.scheduleAtFixedRate(task, 0, 2, TimeUnit.SECONDS);
-    }
-
-    public static void main(String[] args) {
-        SpringApplication.run(ProducerAMQP.class, args);
     }
 }
