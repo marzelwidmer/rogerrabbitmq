@@ -18,7 +18,7 @@ public class ReceiverAMQP {
 
     @RabbitListener(queues = "roger-rabbit-queue")
     public void receiveMessage(String message) {
-        System.out.println("Received <" + message + ">");
+        logger.info("Received <" + message + ">");
         latch.countDown();
     }
 

@@ -30,6 +30,10 @@ endpoints:
     enabled: true
     sensitive: false
 
+# Logging
+logging:
+  file: log/application.log
+
 # Server
 server:
   address: localhost

@@ -52,6 +52,8 @@ For more information please visit the {spring-boot-ref-guide-executable-jar}[Spr
     $ java -jar -Dspring.profiles.active=producer rogerrabbitmq.jar
 
 ===== RabbitMQ Server
+https://github.com/RabbitMQSimulator/RabbitMQSimulator
+
     $ sudo rabbitmq-server
 
 Default URL : http://localhost:15672/#/
@@ -67,3 +69,6 @@ Default URL : http://localhost:15672/#/
 
 ==== Start RabbitMQ Server
     $  sudo rabbitmqctl start_app
+
+
+
