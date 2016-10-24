@@ -1,9 +1,13 @@
+
 # Spring
 spring:
   profiles:
   #  active: local
   application:
     name: rogger-rabbitmq
+  rabbitmq:
+    host: localhost
+    port: 5672
 
 # Infos Build
 info:
