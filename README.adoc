@@ -19,7 +19,16 @@ image:https://api.codacy.com/project/badge/Coverage/34093789c75a4b72891743de8715
 :spring-boot-ref-guide: http://docs.spring.io/spring-boot/docs/current-SNAPSHOT/reference/htmlsingle/
 :spring-boot-ref-guide-executable-jar: http://docs.spring.io/spring-boot/docs/current-SNAPSHOT/reference/htmlsingle/#getting-started-first-application-executable-jar
 
-=== Install RabbitMQ
+=== Install Erlang
+    $ brew install erlang
+
+=== Build and Start Application
+This will donwload RabbitMQ server and start RabbitMQ Brokcer on port `5672`
+
+ $ mvn spring-boot:run
+
+
+====== Install RabbitMQ - Manual
 See: https://www.rabbitmq.com/install-homebrew.html
 
     $ sudo brew install rabbitmq
