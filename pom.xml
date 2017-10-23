@@ -64,6 +64,7 @@
             <groupId>io.arivera.oss</groupId>
             <artifactId>embedded-rabbitmq</artifactId>
             <version>${embedded-rabbitmq.version}</version>
+            <!--<scope>test</scope>-->
         </dependency>
 
         <!-- Test -->
